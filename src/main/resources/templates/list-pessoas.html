@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de cadastrados</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg nav-red">
+    <a class="navbar-brand">MS Resgate</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Alunos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cursos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Usuários</a>
+            </li>
+        </ul>
+    </div>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2>Alunos</h2>
+        </div>
+        <div class="col-6">
+            <a style="float:right" type="buttom" href="cadastro" class="btn btn-light">Cadastrar +</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <input style="margin:30px; margin-left:0" type="text" class="form-control" placeholder="Buscar...">
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">RG</th>
+                <th scope="col">Nascimento</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Celular</th>
+                <th scope="col">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="pessoa : ${pessoas}">
+                <td th:text="${pessoa.id}"></td>
+                <td th:text="${pessoa.nome}"></td>
+                <td th:text="${pessoa.cpf}"></td>
+                <td th:text="${pessoa.rg}"></td>
+                <td th:text="${pessoa.nascimento}"></td>
+                <td th:text="${pessoa.contatos.email}"></td>
+                <td th:text="${pessoa.contatos.celular}"></td>
+                <td><a href="">Ver</a> | <a href="">Editar</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

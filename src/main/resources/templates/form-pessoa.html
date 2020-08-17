@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css" crossorigin="anonymous">
+</head>
+<body>
+<ul class="nav nav-red">
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </li>
+</ul>
+<div class="container">
+    <h1> Cadastro de Pessoas</h1>
+    <form action="/pessoa" method="post" th:object="${pessoa}">
+        <div class="form-group">
+            <label for="inputName">Nome</label>
+            <input id="inputName" type="text" name="nome" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="inputNamePai">Nome pai</label>
+            <input id="inputNamePai" name="nomeDoPai" class="form-control" type="text"/>
+        </div>
+        <div class="form-group">
+            <label for="inputNameMae">Nome da mãe</label>
+            <input id="inputNameMae" name="nomeMae" class="form-control" type="text"/>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <label for="inputCpf">CPF</label>
+                <input id="inputCpf" name="cpf" class="form-control" type="text"/>
+            </div>
+            <div class="form-group col">
+                <label for="inputRg">RG</label>
+                <input id="inputRg" name="rg" class="form-control" type="text"/>
+            </div>
+            <div class="form-group col">
+                <label for="inputDataNasc">Data de nascimento</label>
+                <input id="inputDataNasc" name="nascimento" class="form-control" type="date"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col">
+                <label for="inputNacionalidade">Nacionalidade</label>
+                <input id="inputNacionalidade" name="nacionalidade" class="form-control" type="text"/>
+            </div>
+
+            <div class="form-group col">
+                <label for="selectEstadoCivil">Estado civil</label>
+                <select id="selectEstadoCivil" name="estadoCivil" class="form-control">
+                    <option>Solteiro</option>
+                    <option>Casado</option>
+                    <option>Divorciado</option>
+                    <option>Viuvo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label style="padding-right:10px" for="checkSexo">Sexo</label>
+            <div id="checkSexo" class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                       value="option1">
+                <label class="form-check-label" for="inlineRadio1">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                       value="option2">
+                <label class="form-check-label" for="inlineRadio2">Feminino</label>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="inputEmail">E-mail</label>
+            <input id="inputEmail" name="contatos.email" class="form-control" type="email"/>
+        </div>
+       <div class="row">
+           <div class="form-group col">
+               <label for="inputTelefone">Telefone</label>
+               <input id="inputTelefone" name="contatos.telefone" class="form-control" type="text"/>
+           </div>
+           <div class="form-group col">
+               <label for="inputCelular">Celular</label>
+               <input id="inputCelular" name="contatos.celular" class="form-control" type="text"/>
+           </div>
+       </div>
+
+        <div class="form-group">
+            <label for="textareObs">Observações</label>
+            <textarea id="textareObs" class="form-control"></textarea>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-2">
+                <label for="inputCep">CEP</label>
+                <input id="inputCep" name="endereco.cep" class="form-control" type="text"/>
+            </div>
+
+            <div class="form-group col-8">
+                <label for="inputLogradouro">Logradouro</label>
+                <input id="inputLogradouro" name="endereco.logradouro" type="text" class="form-control"/>
+            </div>
+
+            <div class="form-group col-2">
+                <label for="inputNumero">Número</label>
+                <input id="inputNumero" name="endereco.numero" class="form-control" type="text"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-4">
+                <label for="inputBairro">Bairro</label>
+                <input id="inputBairro" name="endereco.bairro" class="form-control" type="text"/>
+            </div>
+
+            <div class="form-group col-4">
+                <label for="inputCidade">Cidade</label>
+                <input id="inputCidade" name="endereco.cidade" class="form-control" type="text"/>
+            </div>
+
+            <div class="form-group col-4">
+                <label for="inputEstado">Estado</label>
+                <input id="inputEstado" name="endereco.estado" class="form-control" type="text"/>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Cadastrar</button>
+        <button class="btn btn-secondary">Cancelar</button>
+    </form>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+.nav-red {
+  background-color:#d03838;
+  margin-bottom:50px;
+}
+
+.nav-link {
+ color:white;
+}
+
+.navbar-brand: a {
+  color:white;
+}
+
+a:hover{
+ color:yellow;
+}
+
